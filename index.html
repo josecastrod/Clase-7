@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ejemplo</title>
+    <style>
+      
+    *{
+      margin: 0; padding: 0;
+    }
+    div#sandunga{
+      width: 800px;
+      margin: 0auto;
+      background: lightblue;
+    }
+
+    div#sandunga div.UX{
+      border: 1px solid black;
+      width: calc(46% - 2px);
+      padding: 1%;
+      margin: 1%;
+      float: left;
+    }
+
+    div#sandunga div.fin{
+      width: 100%;
+      clear: both;
+      background: purple;
+    }
+
+
+    </style>
+  </head>
+  <body>
+    <button onclick="muestra()">Click</button>
+
+    <div id="sandunga"></div>
+   
+    <script>
+
+      /*
+      Margaret (21 titles)
+      Serena Williams (23 titles)
+      Stefi Graff (22 titles)
+      Helen Wills (19 titles)
+
+      */
+
+
+const trabajos= [
+  {
+    title: "Proyecto 1",
+    category: "UX",
+    photo: "https://picsum.photos/id/36/600/300",
+    descripción: "Este trabajo nació de..., lo hice en tal momento, ental curso",
+  },
+   {
+    title: "Proyecto 2",
+    category: "UX",
+    photo: "https://picsum.photos/id/68/600/300",
+    descripción: "Este trabajo nació de..., lo hice en tal momento, ental curso",
+  },
+   {
+    title: "Proyecto 3",
+    category: "UX",
+    photo: "https://picsum.photos/id/104/600/300",
+    descripción: "Este trabajo nació de..., lo hice en tal momento, ental curso",
+  },
+  {
+    title: "Proyecto 4",
+    category: "UX",
+    photo: "https://picsum.photos/id/73/600/300",
+    descripción: "Este trabajo nació de..., lo hice en tal momento, ental curso",
+  },
+  {
+    title: "Mi lindo trabajo",
+    category: "UX",
+    photo: "https://picsum.photos/id/295/600/300",
+    descripción: "Este trabajo nació de..., lo hice en tal momento, ental curso",
+  },
+
+];
+
+
+      const parrafos = document.querySelector("#sandunga");
+        trabajos.forEach((v) => {
+          /*
+          parrafos.innerHTML += "<tr><td>" + v.name + "</tr></td>" + emojis(v.titles) +"</tr></td>";
+          */
+
+          parrafos.innerHTML += `
+             <div>
+             <h1>${v.title}<h1>
+            <h2>${v.category}<h2>
+              <img src="${v.photo}" />
+               <p>${v.descripción}</p>
+             </div>`;
+
+           });
+
+    </script>
+  </body>
+</html>
